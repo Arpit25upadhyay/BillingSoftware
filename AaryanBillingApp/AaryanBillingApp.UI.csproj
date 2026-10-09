@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AaryanBillingApp.Business\AaryanBillingApp.Business.csproj" />
+    <ProjectReference Include="..\AaryanBillingApp.Models\AaryanBillingApp.Models.csproj" />
+    <ProjectReference Include="..\AaryanBillingApp.Shared\AaryanBillingApp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Controls\" />
+    <Folder Include="Themes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
+    <PackageReference Include="Dapper" Version="2.1.79" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.10" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="../AaryanBillingApp.Business/AaryanBillingApp.Business.csproj" />
+  <Project Path="../AaryanBillingApp.Data/AaryanBillingApp.Data.csproj" />
+  <Project Path="../AaryanBillingApp.Models/AaryanBillingApp.Models.csproj" />
+  <Project Path="../AaryanBillingApp.Shared/AaryanBillingApp.Shared.csproj" />
+  <Project Path="AaryanBillingApp.UI.csproj" />
+</Solution>

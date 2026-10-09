@@ -1,0 +1,60 @@
+﻿<Window x:Class="AaryanBillingApp.UI.Views.Brands.AddBrandWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding WindowTitle}"
+        Width="500"
+        Height="350"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="25">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Brand Name"
+                   FontWeight="SemiBold"
+                   Margin="0,0,0,5"/>
+
+        <TextBox Grid.Row="1"
+                 Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                 Height="35"/>
+
+        <StackPanel Grid.Row="2"
+                    Margin="0,20,0,0">
+
+            <TextBlock Text="Description"
+                       FontWeight="SemiBold"
+                       Margin="0,0,0,5"/>
+
+            <TextBox Text="{Binding Description, UpdateSourceTrigger=PropertyChanged}"
+                     Height="80"
+                     TextWrapping="Wrap"
+                     AcceptsReturn="True"/>
+
+            <CheckBox Content="Active"
+                      IsChecked="{Binding IsActive}"
+                      Margin="0,15,0,0"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="3"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,20,0,0">
+
+            <Button Content="Cancel"
+                    Command="{Binding CancelCommand}"
+                    Width="100"
+                    Margin="0,0,10,0"/>
+
+            <Button Content="Save"
+                    Command="{Binding SaveCommand}"
+                    Width="100"/>
+        </StackPanel>
+
+    </Grid>
+</Window>

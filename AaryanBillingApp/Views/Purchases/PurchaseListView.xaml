@@ -1,0 +1,191 @@
+﻿<UserControl x:Class="AaryanBillingApp.UI.Views.Purchases.PurchaseListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d">
+
+    <Grid Background="#F5F7FA">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- ================= HEADER ================= -->
+
+        <Border Grid.Row="0"
+                Background="White"
+                Padding="25,20"
+                BorderBrush="#E5E7EB"
+                BorderThickness="0,0,0,1">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel>
+
+                    <TextBlock Text="Purchases"
+                               FontSize="28"
+                               FontWeight="SemiBold"
+                               Foreground="#172033"/>
+
+                    <TextBlock Text="Manage your purchase invoices and supplier transactions"
+                               Margin="0,5,0,0"
+                               Foreground="#6B7280"
+                               FontSize="13"/>
+
+                </StackPanel>
+
+                <Button Grid.Column="1"
+                        Content="+  Add Purchase"
+                        Width="140"
+                        Height="40"
+                        Command="{Binding AddPurchaseCommand}"
+                        Background="#2563EB"
+                        Foreground="White"
+                        BorderThickness="0"
+                        FontWeight="SemiBold"
+                        Cursor="Hand"/>
+
+            </Grid>
+
+        </Border>
+
+
+        <!-- ================= SEARCH / ACTIONS ================= -->
+
+        <Border Grid.Row="1"
+                Background="White"
+                Margin="20,20,20,10"
+                Padding="15"
+                CornerRadius="6"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="350"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox Grid.Column="0"
+                         Height="36"
+                         Padding="10,0"
+                         VerticalContentAlignment="Center"
+                         Text="{Binding SearchText,
+                                        UpdateSourceTrigger=PropertyChanged}"
+                         ToolTip="Search by Purchase No, Supplier or Invoice Number"/>
+
+                <StackPanel Grid.Column="2"
+                            Orientation="Horizontal">
+
+                    <Button Content="Refresh"
+                            Width="90"
+                            Height="36"
+                            Margin="10,0,0,0"
+                            Command="{Binding RefreshCommand}"/>
+
+                    <Button Content="Delete"
+                            Width="90"
+                            Height="36"
+                            Margin="10,0,0,0"
+                            Command="{Binding DeletePurchaseCommand}"/>
+
+                </StackPanel>
+
+            </Grid>
+
+        </Border>
+
+
+        <!-- ================= PURCHASE GRID ================= -->
+
+        <Border Grid.Row="2"
+                Background="White"
+                Margin="20,10,20,20"
+                Padding="10"
+                CornerRadius="6"
+                BorderBrush="#E5E7EB"
+                BorderThickness="1">
+
+            <DataGrid ItemsSource="{Binding Purchases}"
+                      SelectedItem="{Binding SelectedPurchase}"
+                      AutoGenerateColumns="False"
+                      IsReadOnly="True"
+                      CanUserAddRows="False"
+                      CanUserDeleteRows="False"
+                      CanUserResizeRows="False"
+                      SelectionMode="Single"
+                      GridLinesVisibility="Horizontal"
+                      HeadersVisibility="Column"
+                      RowHeight="38"
+                      ColumnHeaderHeight="40"
+                      Background="White"
+                      BorderThickness="0">
+
+                <DataGrid.Columns>
+
+                    <DataGridTextColumn Header="Purchase No"
+                                        Binding="{Binding PurchaseNo}"
+                                        Width="150"/>
+
+                    <DataGridTextColumn Header="Supplier"
+                                        Binding="{Binding SupplierName}"
+                                        Width="180"/>
+
+                    <DataGridTextColumn Header="Invoice No"
+                                        Binding="{Binding InvoiceNumber}"
+                                        Width="150"/>
+
+                    <DataGridTextColumn Header="Purchase Date"
+                                        Binding="{Binding PurchaseDate,
+                                                  StringFormat={}{0:dd-MM-yyyy}}"
+                                        Width="130"/>
+
+                    <DataGridTextColumn Header="Sub Total"
+                                        Binding="{Binding SubTotal,
+                                                  StringFormat={}{0:N2}}"
+                                        Width="120"/>
+
+                    <DataGridTextColumn Header="Tax"
+                                        Binding="{Binding TaxAmount,
+                                                  StringFormat={}{0:N2}}"
+                                        Width="100"/>
+
+                    <DataGridTextColumn Header="Grand Total"
+                                        Binding="{Binding GrandTotal,
+                                                  StringFormat={}{0:N2}}"
+                                        Width="130"/>
+
+                    <DataGridTextColumn Header="Paid"
+                                        Binding="{Binding PaidAmount,
+                                                  StringFormat={}{0:N2}}"
+                                        Width="110"/>
+
+                    <DataGridTextColumn Header="Due"
+                                        Binding="{Binding DueAmount,
+                                                  StringFormat={}{0:N2}}"
+                                        Width="110"/>
+
+                    <DataGridTextColumn Header="Status"
+                                        Binding="{Binding Status}"
+                                        Width="100"/>
+
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Border>
+
+    </Grid>
+
+</UserControl>

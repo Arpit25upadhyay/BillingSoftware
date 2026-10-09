@@ -1,0 +1,20 @@
+﻿AaryanBillingApp.UI
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\New folder (2)\AaryanBillingApp\obj\Debug\net10.0-windows\
+AaryanBillingApp.UI
+none
+false
+TRACE;DEBUG;NET;NET10_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NET9_0_OR_GREATER;NET10_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
+C:\New folder (2)\AaryanBillingApp\App.xaml
+18-437549533
+
+441365070183
+2511482618514
+Resources\ViewTemplates.xaml;Views\Brands\AddBrandWindow.xaml;Views\Categories\AddCategoryWindow.xaml;Views\Categories\CategoryListView.xaml;Views\Customers\AddCustomerWindow.xaml;Views\Customers\CustomerListView.xaml;Views\Dashboard\DashboardView.xaml;Views\Products\AddColorWindow.xaml;Views\Products\AddProductWindow.xaml;Views\Products\ProductListView.xaml;Views\Purchases\AddPurchaseWindow.xaml;Views\Purchases\PurchaseListView.xaml;Views\Reports\ReportsWindow.xaml;Views\Reports\ReportView.xaml;Views\Settings\SettingsView.xaml;Views\Shell\ShellView.xaml;Views\Suppliers\AddSupplierWindow.xaml;Views\Suppliers\SupplierListView.xaml;
+
+False
+

@@ -1,0 +1,63 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+
+    xmlns:dashboardVM="clr-namespace:AaryanBillingApp.UI.ViewModels.Dashboard"
+    xmlns:productVM="clr-namespace:AaryanBillingApp.UI.ViewModels.Products"
+    xmlns:categoryVM="clr-namespace:AaryanBillingApp.UI.ViewModels.Categories"
+    xmlns:customerVM="clr-namespace:AaryanBillingApp.UI.ViewModels.Customers"
+    xmlns:supplierVM="clr-namespace:AaryanBillingApp.UI.ViewModels.Suppliers"
+    xmlns:purchaseVM="clr-namespace:AaryanBillingApp.UI.ViewModels.Purchases"
+    xmlns:reportVM="clr-namespace:AaryanBillingApp.UI.ViewModels.Reports"
+    xmlns:settingVM="clr-namespace:AaryanBillingApp.UI.ViewModels.Settings"
+
+    xmlns:dashboardView="clr-namespace:AaryanBillingApp.UI.Views.Dashboard"
+    xmlns:productView="clr-namespace:AaryanBillingApp.UI.Views.Products"
+    xmlns:categoryView="clr-namespace:AaryanBillingApp.UI.Views.Categories"
+    xmlns:customerView="clr-namespace:AaryanBillingApp.UI.Views.Customers"
+    xmlns:supplierView="clr-namespace:AaryanBillingApp.UI.Views.Suppliers"
+    xmlns:purchaseView="clr-namespace:AaryanBillingApp.UI.Views.Purchases"
+    xmlns:reportView="clr-namespace:AaryanBillingApp.UI.Views.Reports"
+    xmlns:settingView="clr-namespace:AaryanBillingApp.UI.Views.Settings">
+
+    <!-- Dashboard -->
+    <DataTemplate DataType="{x:Type dashboardVM:DashboardViewModel}">
+        <dashboardView:DashboardView />
+    </DataTemplate>
+
+    <!-- Products -->
+    <DataTemplate DataType="{x:Type productVM:ProductListViewModel}">
+        <productView:ProductListView />
+    </DataTemplate>
+
+    <!-- Categories -->
+    <DataTemplate DataType="{x:Type categoryVM:CategoryListViewModel}">
+        <categoryView:CategoryListView />
+    </DataTemplate>
+
+    <!-- Customers -->
+    <DataTemplate DataType="{x:Type customerVM:CustomerListViewModel}">
+        <customerView:CustomerListView />
+    </DataTemplate>
+
+    <!-- Suppliers -->
+    <DataTemplate DataType="{x:Type supplierVM:SupplierListViewModel}">
+        <supplierView:SupplierListView />
+    </DataTemplate>
+
+    <!-- Purchases -->
+    <DataTemplate DataType="{x:Type purchaseVM:PurchaseListViewModel}">
+        <purchaseView:PurchaseListView />
+    </DataTemplate>
+
+    <!-- Reports -->
+    <DataTemplate DataType="{x:Type reportVM:ReportsViewModel}">
+        <reportView:ReportsView />
+    </DataTemplate>
+
+    <!-- Settings -->
+    <DataTemplate DataType="{x:Type settingVM:SettingsViewModel}">
+        <settingView:SettingsView />
+    </DataTemplate>
+
+</ResourceDictionary>

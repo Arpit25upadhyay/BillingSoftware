@@ -1,0 +1,255 @@
+﻿<Window x:Class="AaryanBillingApp.UI.Views.Purchases.AddPurchaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Add Purchase"
+        Height="700"
+        Width="1100"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+
+        <!-- HEADER -->
+
+        <TextBlock Text="Add Purchase"
+                   FontSize="24"
+                   FontWeight="Bold"
+                   Margin="0,0,0,20"/>
+
+
+        <!-- PURCHASE DETAILS -->
+
+        <GroupBox Grid.Row="1"
+                  Header="Purchase Details"
+                  Padding="15">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="130"/>
+                    <ColumnDefinition Width="250"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+
+                <!-- Supplier -->
+
+                <TextBlock Text="Supplier"
+                           VerticalAlignment="Center"/>
+
+                <ComboBox Grid.Column="1"
+                          ItemsSource="{Binding Suppliers}"
+                          SelectedItem="{Binding SelectedSupplier}"
+                          DisplayMemberPath="CompanyName"/>
+
+
+                <!-- Purchase No -->
+
+                <TextBlock Grid.Column="2"
+                           Text="Purchase No"
+                           VerticalAlignment="Center"/>
+
+                <TextBox Grid.Column="3"
+                         Text="{Binding Purchase.PurchaseNo}"
+                         IsReadOnly="True"/>
+
+
+                <!-- Invoice Number -->
+
+                <TextBlock Grid.Row="1"
+                           Text="Invoice Number"
+                           VerticalAlignment="Center"/>
+
+                <TextBox Grid.Row="1"
+                         Grid.Column="1"
+                         Text="{Binding Purchase.InvoiceNumber}"/>
+
+
+                <!-- Invoice Date -->
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="2"
+                           Text="Invoice Date"
+                           VerticalAlignment="Center"/>
+
+                <DatePicker Grid.Row="1"
+                            Grid.Column="3"
+                            SelectedDate="{Binding Purchase.InvoiceDate}"/>
+
+
+                <!-- Purchase Date -->
+
+                <TextBlock Grid.Row="2"
+                           Text="Purchase Date"
+                           VerticalAlignment="Center"/>
+
+                <DatePicker Grid.Row="2"
+                            Grid.Column="1"
+                            SelectedDate="{Binding Purchase.PurchaseDate}"/>
+
+
+                <!-- Remarks -->
+
+                <TextBlock Grid.Row="2"
+                           Grid.Column="2"
+                           Text="Remarks"
+                           VerticalAlignment="Center"/>
+
+                <TextBox Grid.Row="2"
+                         Grid.Column="3"
+                         Text="{Binding Purchase.Remarks}"/>
+
+            </Grid>
+
+        </GroupBox>
+
+
+        <!-- ITEMS -->
+
+        <GroupBox Grid.Row="2"
+                  Header="Purchase Items"
+                  Margin="0,20,0,0"
+                  Padding="10">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+
+                <Button Content="+ Add Item"
+                        Width="110"
+                        Height="30"
+                        HorizontalAlignment="Left"
+                        Command="{Binding AddItemCommand}"/>
+
+
+                <DataGrid Grid.Row="1"
+                          Margin="0,10,0,0"
+                          ItemsSource="{Binding Items}"
+                          AutoGenerateColumns="False"
+                          CanUserAddRows="False">
+
+                    <DataGrid.Columns>
+
+                        <DataGridTextColumn Header="Product Variant"
+                                            Binding="{Binding ProductVariantId}"
+                                            Width="*"/>
+
+                        <DataGridTextColumn Header="Quantity"
+                                            Binding="{Binding Quantity}"
+                                            Width="100"/>
+
+                        <DataGridTextColumn Header="Purchase Price"
+                                            Binding="{Binding PurchasePrice}"
+                                            Width="130"/>
+
+                        <DataGridTextColumn Header="Selling Price"
+                                            Binding="{Binding SellingPrice}"
+                                            Width="130"/>
+
+                        <DataGridTextColumn Header="Discount"
+                                            Binding="{Binding DiscountAmount}"
+                                            Width="100"/>
+
+                        <DataGridTextColumn Header="GST %"
+                                            Binding="{Binding GSTPercentage}"
+                                            Width="90"/>
+
+                        <DataGridTextColumn Header="GST Amount"
+                                            Binding="{Binding GSTAmount}"
+                                            Width="110"/>
+
+                        <DataGridTextColumn Header="Line Total"
+                                            Binding="{Binding LineTotal}"
+                                            Width="110"/>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+
+        </GroupBox>
+
+
+        <!-- TOTALS + BUTTONS -->
+
+        <Grid Grid.Row="3"
+              Margin="0,20,0,0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+
+            <!-- TOTALS -->
+
+            <StackPanel HorizontalAlignment="Right">
+
+                <TextBlock Text="{Binding Purchase.SubTotal,
+                                   StringFormat=Sub Total: ₹{0:N2}}"
+                           Margin="0,2"/>
+
+                <TextBlock Text="{Binding Purchase.DiscountAmount,
+                                   StringFormat=Discount: ₹{0:N2}}"
+                           Margin="0,2"/>
+
+                <TextBlock Text="{Binding Purchase.TaxAmount,
+                                   StringFormat=Tax: ₹{0:N2}}"
+                           Margin="0,2"/>
+
+                <TextBlock Text="{Binding Purchase.GrandTotal,
+                                   StringFormat=Grand Total: ₹{0:N2}}"
+                           FontSize="18"
+                           FontWeight="Bold"
+                           Margin="0,5"/>
+
+            </StackPanel>
+
+
+            <!-- BUTTONS -->
+
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal"
+                        Margin="30,0,0,0"
+                        VerticalAlignment="Bottom">
+
+                <Button Content="Save"
+                        Width="100"
+                        Height="35"
+                        Margin="5"
+                        Command="{Binding SaveCommand}"/>
+
+                <Button Content="Cancel"
+                        Width="100"
+                        Height="35"
+                        Margin="5"
+                        Command="{Binding CancelCommand}"
+                        IsCancel="True"/>
+
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+
+</Window>
