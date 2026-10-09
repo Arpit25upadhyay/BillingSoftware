@@ -1,0 +1,12 @@
+C:\New folder (2)\AaryanBillingApp.Models\bin\Debug\net10.0-windows\AaryanBillingApp.Models.deps.json
+C:\New folder (2)\AaryanBillingApp.Models\bin\Debug\net10.0-windows\AaryanBillingApp.Models.dll
+C:\New folder (2)\AaryanBillingApp.Models\bin\Debug\net10.0-windows\AaryanBillingApp.Models.pdb
+C:\New folder (2)\AaryanBillingApp.Models\obj\Debug\net10.0-windows\AaryanBillingApp.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\New folder (2)\AaryanBillingApp.Models\obj\Debug\net10.0-windows\AaryanBillingApp.Models.AssemblyInfoInputs.cache
+C:\New folder (2)\AaryanBillingApp.Models\obj\Debug\net10.0-windows\AaryanBillingApp.Models.AssemblyInfo.cs
+C:\New folder (2)\AaryanBillingApp.Models\obj\Debug\net10.0-windows\AaryanBillingApp.Models.csproj.CoreCompileInputs.cache
+C:\New folder (2)\AaryanBillingApp.Models\obj\Debug\net10.0-windows\AaryanBillingApp.Models.dll
+C:\New folder (2)\AaryanBillingApp.Models\obj\Debug\net10.0-windows\refint\AaryanBillingApp.Models.dll
+C:\New folder (2)\AaryanBillingApp.Models\obj\Debug\net10.0-windows\AaryanBillingApp.Models.pdb
+C:\New folder (2)\AaryanBillingApp.Models\obj\Debug\net10.0-windows\ref\AaryanBillingApp.Models.dll
+C:\New folder (2)\AaryanBillingApp.Models\obj\Debug\net10.0-windows\AaryanBillingApp.Models.csproj.AssemblyReference.cache
